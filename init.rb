@@ -5,7 +5,7 @@ class Heroku::Command::Release < Heroku::Command::Base
   #
   # Release.
   #
-  def release
+  def index
     puts "Test"
   end
 end
