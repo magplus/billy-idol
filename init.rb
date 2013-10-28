@@ -1,5 +1,7 @@
 require "heroku/command/base"
 
+# Release stuff to Heroku.
+#
 class Heroku::Command::Release < Heroku::Command::Base
   # release
   #
