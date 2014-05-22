@@ -1,9 +1,11 @@
 require_relative 'releaser'
 require 'psych'
 
-#require "heroku/command/base"
+def test?
+  File.basename($PROGRAM_NAME) == "rspec"
+end
 
-# Remove the following and uncomment the above to make it "usable" as Heroku plugin again.
+require "heroku/command/base" unless test?
 
 module Heroku
   module Command
@@ -22,9 +24,9 @@ class Heroku::Command::Release < Heroku::Command::Base
 
   EXIT_ERROR = 1
 
-
   def index
     releaser = Releaser.new(config)
+    releaser.run
     releaser.result
   rescue Errno::ENOENT
     print_error_message
@@ -44,9 +46,5 @@ class Heroku::Command::Release < Heroku::Command::Base
 
   def print_error_message
     puts "No configuration file at #{configuration_path}" unless test?
-  end
-  
-  def test?
-    File.basename($PROGRAM_NAME) == "rspec"
   end
 end

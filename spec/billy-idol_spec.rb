@@ -9,6 +9,17 @@ describe Heroku::Command::Release do
     Heroku::Command::Release.new.index
   end
 
+  it "runs the releaser" do
+    stub_config_file
+    fake_releaser = double
+
+    expect(fake_releaser).to receive(:result)
+    expect(fake_releaser).to receive(:run)
+    expect(Releaser).to receive(:new).and_return(fake_releaser)
+
+    Heroku::Command::Release.new.index
+  end
+
   it "returns the result of Releaser" do
     stub_config_file
 
