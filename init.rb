@@ -4,8 +4,8 @@ require 'psych'
 begin
   require 'platform-api'
 rescue LoadError
-  puts 'You must install the platform-api gem'
-  exit 255
+  system('gem install platform-api')
+  require 'platform-api'
 end
 
 
