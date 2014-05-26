@@ -1,4 +1,5 @@
 require_relative 'vendor/platform-api/lib/platform-api'
+require_relative 'vendor/heroics/lib/heroics'
 
 class Releaser < Struct.new(:config)
   def result
