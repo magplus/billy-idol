@@ -1,3 +1,5 @@
+require 'platform-api'
+
 class Releaser < Struct.new(:config)
   def result
   end
