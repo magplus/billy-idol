@@ -11,5 +11,6 @@ class Releaser
 
     slug_id = heroku.release.list(config['from']).last['slug']['id']
     heroku.release.create(config['to'], slug: slug_id)
+    nil
   end
 end
