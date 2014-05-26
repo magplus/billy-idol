@@ -2,6 +2,19 @@ GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.2.5)
+    erubis (2.7.0)
+    excon (0.31.0)
+    heroics (0.0.9)
+      erubis (~> 2.7.0)
+      excon
+      moneta
+      multi_json (>= 1.9.2)
+      netrc
+    moneta (0.7.20)
+    multi_json (1.10.1)
+    netrc (0.7.7)
+    platform-api (0.1.0)
+      heroics (~> 0.0.9)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
@@ -15,4 +28,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  platform-api
   rspec

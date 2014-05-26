@@ -1,5 +1,5 @@
   def switch_to_master
-    if `git rev-parse --abbref-ref HEAD` == 'master'
+    if `git rev-parse --abbrev-ref HEAD` == 'master'
       self
     else
       Quitter.new "You must switch to master"
