@@ -1,6 +1,14 @@
 require_relative 'releaser'
-require 'rest-client'
 require 'psych'
+
+begin
+  require 'platform-api'
+rescue LoadError
+  puts 'You must install the platform-api gem'
+  exit 255
+end
+
+
 
 def test?
   File.basename($PROGRAM_NAME) == "rspec"
