@@ -1,5 +1,5 @@
 require_relative 'releaser'
-require 'platform-api'
+require_relative 'vendor/platform-api'
 require 'rest-client'
 require 'psych'
 

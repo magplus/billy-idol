@@ -1,0 +1,3 @@
+[submodule "vendor/platform-api"]
+	path = vendor/platform-api
+	url = https://github.com/heroku/platform-api.git
