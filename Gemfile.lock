@@ -1,10 +1,16 @@
+PATH
+  remote: vendor/platform-api
+  specs:
+    platform-api (0.2.0)
+      heroics (~> 0.0.10)
+
 GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.2.5)
     erubis (2.7.0)
-    excon (0.31.0)
-    heroics (0.0.9)
+    excon (0.33.0)
+    heroics (0.0.10)
       erubis (~> 2.7.0)
       excon
       moneta
@@ -14,8 +20,6 @@ GEM
     moneta (0.7.20)
     multi_json (1.10.1)
     netrc (0.7.7)
-    platform-api (0.1.0)
-      heroics (~> 0.0.9)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rspec (2.14.1)
@@ -31,6 +35,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  platform-api
+  platform-api!
   rest-client
   rspec
