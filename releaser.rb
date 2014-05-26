@@ -1,4 +1,4 @@
-require 'platform-api'
+require_relative './vendor/platform-api'
 
 class Releaser < Struct.new(:config)
   def result
