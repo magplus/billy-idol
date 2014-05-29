@@ -1,12 +1,12 @@
 require_relative '../init'
 
-describe Heroku::Command::Release do
+describe Release do
   it "passes the configuration to Releaser" do
     stub_config_file
 
     expect(Releaser).to receive(:new).with("config" => { "key" => "value" }).and_return(Anything.new)
 
-    Heroku::Command::Release.new.index
+    Release.new.index
   end
 
   it "runs the releaser" do
@@ -17,7 +17,7 @@ describe Heroku::Command::Release do
     expect(fake_releaser).to receive(:run)
     expect(Releaser).to receive(:new).and_return(fake_releaser)
 
-    Heroku::Command::Release.new.index
+    Release.new.index
   end
 
   it "returns the result of Releaser" do
@@ -25,7 +25,7 @@ describe Heroku::Command::Release do
 
     Releaser.any_instance.stub(:result).and_return(:foo)
 
-    Heroku::Command::Release.new.index.should == :foo
+    Release.new.index.should == :foo
   end
 
   it "quits if there is no configuration file" do
@@ -33,7 +33,7 @@ describe Heroku::Command::Release do
 
     expect(Releaser).not_to receive(:new)
 
-    Heroku::Command::Release.new.index.should == 1
+    Release.new.index.should == 1
   end
 
   private
